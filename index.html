@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת תכולת עבודה - פיקוד מקומי</title>
+    
+    <!-- CSS משולב בתוך הקובץ -->
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-logo">
+                <img src="company_logo.png" alt="לוגו החברה" id="headerLogo" onerror="this.style.display='none'">
+            </div>
+            <h1>יצירת תכולת עבודה - פיקוד מקומי</h1>
+        </header>
+        <main>
+            <form id="quoteForm">
+                <section class="form-section">
+                    <h2>פרטי הפרויקט</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="siteName">שם האתר:</label>
+                            <input type="text" id="siteName" name="siteName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ourReference">סימננו:</label>
+                            <input type="text" id="ourReference" name="ourReference">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="space">מרחב:</label>
+                            <select id="space" name="space">
+                                <option value="">בחר...</option>
+                                <option value="צפון">צפון</option>
+                                <option value="מרכז">מרכז</option>
+                                <option value="דרום">דרום</option>
+                                <option value="גורם חוץ">גורם חוץ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="softwareProduction">גיליון ייצור תוכנה:</label>
+                            <input type="text" id="softwareProduction" name="softwareProduction">
+                        </div>
+                        <div class="form-group">
+                            <label for="displayProduction">גיליון ייצור צג:</label>
+                            <input type="text" id="displayProduction" name="displayProduction">
+                        </div>
+                    </div>
+                </section>
+                <section class="form-section">
+                    <h2>דרישות תוכנה</h2>
+                    <div class="form-row">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="requireFieldSoftware" name="requireFieldSoftware">
+                            <label for="requireFieldSoftware">נדרש גיבוי תוכנה מהשטח/חומר טכני</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="requireNewSoftware" name="requireNewSoftware">
+                            <label for="requireNewSoftware">כתיבת תוכנה חדשה</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="requireProfibus" name="requireProfibus">
+                            <label for="requireProfibus">נדרש רשימת פרופיבס/פרופינט</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="requireTPM" name="requireTPM">
+                            <label for="requireTPM">נדרש תפ"מ</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="controllerType">סוג בקר:</label>
+                            <select id="controllerType" name="controllerType">
+                                <option value="">בחר...</option>
+                                <option value="CPE305">CPE305</option>
+                                <option value="90-30">90-30</option>
+                                <option value="CPE200">CPE200</option>
+                                <option value="CPE330">CPE330</option>
+                                <option value="CPE330 Redundancy">CPE330 Redundancy</option>
+                                <option value="אחר">אחר</option>
+                            </select>
+                            <div id="otherControllerField" class="other-field">
+                                <input type="text" id="otherControllerType" name="otherControllerType" placeholder="נא לפרט סוג בקר...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="displayType">סוג צג:</label>
+                            <select id="displayType" name="displayType">
+                                <option value="">בחר...</option>
+                                <option value="ETOP707 טקסטואלי">ETOP707 טקסטואלי</option>
+                                <option value="ETOP710 טקסטואלי">ETOP710 טקסטואלי</option>
+                                <option value="ETOP707 נומרי">ETOP707 נומרי</option>
+                                <option value="ETOP705 נומרי">ETOP705 נומרי</option>
+                                <option value="ETOP715 טקסטואלי">ETOP715 טקסטואלי</option>
+                                <option value="HMI C.M">HMI C.M</option>
+                                <option value="HydroScada">HydroScada</option>
+                                <option value="אחר">אחר</option>
+                            </select>
+                            <div id="otherDisplayField" class="other-field">
+                                <input type="text" id="otherDisplayType" name="otherDisplayType" placeholder="נא לפרט סוג צג...">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-section">
+                    <h2>תכולת העבודה</h2>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="workContent">תכולת עבודה:</label>
+                            <textarea id="workContent" name="workContent" rows="8"></textarea>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-section">
+                    <h2>המלצות / הערות</h2>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="notes">הערות:</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="difficultyLevel">רמת קושי:</label>
+                            <select id="difficultyLevel" name="difficultyLevel">
+                                <option value="">בחר...</option>
+                                <option value="קל">קל</option>
+                                <option value="בינוני">בינוני</option>
+                                <option value="קשה">קשה</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                <div class="form-actions">
+                    <button type="button" id="generatePdfBtn" class="primary-btn">צור PDF</button>
+                    <button type="button" id="exportExcelBtn" class="primary-btn">ייצא הכל לאקסל</button>
+                    <button type="button" id="saveBtn" class="primary-btn">שמור למאגר</button>
+                    <button type="button" id="resetForm" class="secondary-btn">נקה טופס</button>
+                </div>
+            </form>
+            <div id="previewSection" class="preview-section">
+                <h2>תצוגה מקדימה</h2>
+                <div id="previewContent" class="preview-content"></div>
+                <div id="responseMessage" class="response-message"></div>
+            </div>
+            <div id="historySection" class="history-section">
+                <h2>היסטוריית תכולות עבודה <span id="historyCount" class="history-count">(0)</span></h2>
+                <div class="history-search">
+                    <input type="text" id="historySearch" placeholder="חפש לפי שם אתר, סימננו, או מרחב...">
+                    <button type="button" id="historyFilterBtn" class="history-filter-btn">סנן</button>
+                    <button type="button" id="historyClearFilterBtn" class="history-filter-btn">נקה סינון</button>
+                </div>
+                <div class="history-table-wrapper">
+                    <table id="historyTable" class="history-table">
+                        <thead>
+                            <tr>
+                                <th>תאריך</th>
+                                <th>שם האתר</th>
+                                <th>סימננו</th>
+                                <th>מרחב</th>
+                                <th>פעולות</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- כאן יתווספו הרשומות ההיסטוריות -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <div class="credit">פותח על ידי אביב שרעבי © 2025</div>
+            </footer>
+        </main>
+    </div>
+
+<!-- הסקריפט המשופר -->
+
+    <script src="script.js"></script>
+</body>
+</html>
